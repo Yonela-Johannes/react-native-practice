@@ -21,8 +21,9 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 50,
   },
-  logImage: {
+  logoImage: {
     width: "70%",
     height: "70%",
   },
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
   },
   jobType: {
-    fontSize: SIZES.small + 2,
+    fontSize: SIZES.small + 1,
     fontFamily: "DMRegular",
     color: COLORS.gray,
     marginTop: 3,

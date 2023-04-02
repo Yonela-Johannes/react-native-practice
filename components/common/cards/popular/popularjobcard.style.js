@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 50
   }),
   logoImage: {
     width: "70%",

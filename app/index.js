@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { View, SafeAreaView } from 'react-native'
 import {Stack, useRouter } from 'expo-router'
 
-import { COLORS, icons, images, SIZES } from './constants'
-import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, screenHeaderBtn, Welcome } from './components'
+import { COLORS, icons, images, SIZES } from '../constants'
+import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, screenHeaderBtn, Welcome } from '../components'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const Home = () => {
@@ -32,10 +32,7 @@ const Home = () => {
             padding: SIZES.medium
           }}
         >
-          <Welcome
-
-          />
-
+          <Welcome />
           <Popularjobs />
           <Nearbyjobs />
         </View>
