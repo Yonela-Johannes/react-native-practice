@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFF",
-    borderRadius: SIZES.large,
+    borderRadius: 50,
   },
   logoImage: {
     width: "80%",
@@ -42,8 +42,9 @@ const styles = StyleSheet.create({
   },
   locationBox: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+    textAlign: "center",
   },
   locationImage: {
     width: 14,
