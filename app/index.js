@@ -8,6 +8,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 const Home = () => {
   const router = useRouter()
+  const [searchTerm, setSearchTerm] = useState("")
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -16,10 +17,7 @@ const Home = () => {
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
-          ),
-          headerRight: () => (
-            <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
+            <ScreenHeaderBtn iconUrl={icons.logo} dimension="80%" />
           ),
           headerTitle: ""
         }}
@@ -32,8 +30,16 @@ const Home = () => {
             padding: SIZES.medium
           }}
         >
-          <Welcome />
-          {/* <Popularjobs /> */}
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if(searchTerm){
+                router.push(`/search/${searchTerm}`)
+              }
+            }}
+           />
+          <Popularjobs />
           <Nearbyjobs />
         </View>
       </ScrollView>

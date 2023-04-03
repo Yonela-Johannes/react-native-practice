@@ -20,17 +20,14 @@ const JobDetails = () => {
   const [refreshing, setRefreshing] = useState(false)
   const tabs = ["About", "Qualifications", "Responsibilities"]
   const [activeTab, setActiveTab] = useState(tabs[0])
-  const { data, isLoading, error, refetch } = useFetch(
+  const { data, isLoading, error } = useFetch(
     'job-details',
     {
       job_id: params.id
     }
-    )
-  const onRefresh = () => {
+  )
+  const onRefresh = () => {}
 
-  }
-
-  console.log(data[0]?.job_highlights?.Responsibilities)
   const displayTabContent = () => {
     switch (activeTab) {
       case 'Qualifications':
@@ -70,13 +67,6 @@ const JobDetails = () => {
               handlePress={() => router.back()}
             />
           ),
-          headerRight: () => (
-            <ScreenHeaderBtn
-              iconUrl={icons.share}
-              dimension='60%'
-              handlePress={() => router.back()}
-            />
-          ),
           headerTitle:""
         }}
       >
@@ -89,7 +79,7 @@ const JobDetails = () => {
           {isLoading ? (
             <ActivityIndicator size="large" color={COLORS.primary} />
           ) : error ? (
-            <Text>Something went wrong</Text>
+            <Text>Api Calls maxed</Text>
           ) : data.length === 0 ? (
             <Text>No Data</Text>
           ) : (

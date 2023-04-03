@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  TouchableOpacity,
   ActivityIndicator
 } from 'react-native'
 import  useFetch  from '../../../hook/useFetch'
@@ -21,9 +20,6 @@ const Nearbyjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Nearby jobs</Text>
-        <TouchableOpacity>
-          <Text style={styles.headerBtn} >Show All</Text>
-        </TouchableOpacity>
       </View>
 
       <View style={styles.cardsContainer}>
@@ -32,7 +28,7 @@ const Nearbyjobs = () => {
             <ActivityIndicator size="large" color={COLORS.primary} />
           ) : error ?
           (
-            <Text>Something went wrong</Text>
+            <Text>Api Calls maxed</Text>
           ) :
           (
             data.map((job) => (

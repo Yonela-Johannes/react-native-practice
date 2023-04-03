@@ -24,7 +24,7 @@ const useFetch = (endpoint, query) => {
       setIsLoading(false);
     } catch (error) {
       setError(error)
-      alert('There is an error')
+      console.log('maxed api calls')
     } finally {
       setIsLoading(false)
     }
@@ -33,12 +33,7 @@ const useFetch = (endpoint, query) => {
   useEffect(() => {
     fetchData()
   }, [])
-
-  const refetch = () => {
-    // setIsLoading(true);
-    // fetchData();
-  }
-  return { data, isLoading, error, refetch };
+  return { data, isLoading, error };
 }
 
 export default useFetch
